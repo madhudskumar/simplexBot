@@ -1,0 +1,69 @@
+doctype html
+html
+    head
+        title chatBot
+        link(href='/vendor/angular-material/angular-material.min.css' rel='stylesheet' type='text/css')
+    body(ng-app="app")
+        md-content(ng-controller="mainCtrl" flex style="height:100%")
+            div(layout="row" style="height:100%")
+                div(layout="column" style="width:100%")
+                    div#chatWindow(flex style="overflow-y:scroll")
+                        md-content
+                            div#chatElement
+                    div(flex="7" style="border-top:3px solid grey")
+                        div(layout="row")
+                            div(flex="90")
+                                form(name="chatInput" ng-submit='sendText(chatInput.text)')
+                                    md-input-container(md-no-float layout="row")
+                                        input(flex type='text' ng-model='chatInput.text' aria-label="chatText" autofocus style="text-align:right;border:0;width:100%;font-size:20px" autocomplete="off")
+                            div(flex="10" layout="row" layout-align="center center")
+                                md-button.md-icon-button(aria-label="send" ng-click="sendText(chatInput.text)" ng-disabled='!chatInput.text')
+                                    md-icon(md-svg-src="/static/img/send.svg")
+
+        style.
+            #chatWindow::-webkit-scrollbar {
+                width: 7px;
+            }
+            #chatWindow::-webkit-scrollbar-thumb {
+                background-color: lightgrey;
+            }
+            input.textInput{
+                border:0;
+            }
+            input.textInput:focus{
+                border:0;
+            }
+
+            #chatWindow{
+            }
+            .user{
+                text-align: right;
+                color: darkgrey;
+                padding:20px;
+                right:0;
+                width: 60%;
+                margin-top:2px;
+                float: right;
+            }
+
+            .watson{
+                text-align: left;
+                color: gray;
+                padding: 20px;
+                right: 0;
+                width: 60%;
+                margin-top: 2px;
+                float: left;
+            }
+
+            .fill-container{
+                -ms-word-wrap:break-word;
+                word-wrap:break-word;
+            }
+        script(type="text/javascript" src="/vendor/angular/angular.min.js")
+        script(type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js")
+        script(type="text/javascript" src="/vendor/angular-aria/angular-aria.min.js")
+        script(type="text/javascript" src="/vendor/angular-messages/angular-messages.min.js")
+        script(type="text/javascript" src="/vendor/angular-material/angular-material.min.js")
+        script(type="text/javascript" src="/vendor/jquery/dist/jquery.min.js")
+        script(type="text/javascript" src="/static/js/app.js")

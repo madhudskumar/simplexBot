@@ -1,0 +1,24 @@
+{
+  "name": "chat-bot",
+  "description": "chat bot with watson",
+  "main": "index.js",
+  "authors": [
+    "madhudskumar <madhudskumar@live.in>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "^1.1.1",
+    "angular-route": "^1.5.8",
+    "jquery": "^3.1.1",
+    "uikit": "^2.27.1"
+  }
+}
